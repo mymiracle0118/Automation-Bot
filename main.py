@@ -3,6 +3,11 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
+# from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.webdriver import ActionChains
 
 def leave():
     driver = webdriver.Chrome()
@@ -14,11 +19,45 @@ def login():
 
     driver.get('https://www.upwork.com/nx/signup/?dest=home')
 
-    time.sleep(5)
-    driver.find_element_by_link_text('Login').click()
+    # time.sleep(5)
+    # driver.find_element_by_link_text('Login').click()
+    # radio_button = driver.find_element(By.XPATH, "//input[@type='radio' and @value='hire']")
+    # driver.find_element_by_xpath("//div[contains(@class, 'first_name')]")
+    # driver.find_element_by_class_name("first_name")
+    # selectItem='Agoda'
+    #First click on the All reviews element to open up the dorpdown element
+    WebDriverWait(driver,20).until(EC.element_to_be_clickable((By.CSS_SELECTOR,"div[data-qa='hire']"))).click()
+    # WebDriverWait(driver,10).until(EC.element_to_be_clickable()).click()
+    WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//button[@data-qa='btn-apply']"))).click()
+    # test = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "//text[@aria-label='First name']")))
+    firstname = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "first-name-input")))
+    firstname.send_keys(user)
+    firstname.send_keys(Keys.ENTER)
+
+    secondname = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "last-name-input")))
+    secondname.send_keys(pswd)
+    secondname.send_keys(Keys.ENTER)
+
+    emailaddress = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "redesigned-input-email")))
+    emailaddress.send_keys('bagel_blaspheme726@simplelogin.com')
+    emailaddress.send_keys(Keys.ENTER)
+
+    password = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "password-input")))
+    password.send_keys('testtesttesttest!23Q')
+    password.send_keys(Keys.ENTER)
+
+    # time.sleep(5)
+    selectcountry = 'Sweden'
+    WebDriverWait(driver,20).until(EC.element_to_be_clickable((By.ID,"country-dropdown"))).click()
+    
+    WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH,"//*[contains(text(), 'Sweden')]"))).click()
+    # button = driver.find_element(By.XPATH, "//input[@type='button' and @value=' Join as a Client ']")
+    # button.click()
+    # radio_button = driver.find_element(By.XPATH, "//input[@type='radio' and @value='hire']")
+    # driver.find_element_by_name('user').send_keys(user)
 
     #put username
-    time.sleep(3)
+    time.sleep(20)
     driver.find_element_by_name('user').send_keys(user)
 
     #put password
