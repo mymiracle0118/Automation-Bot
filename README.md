@@ -25,6 +25,7 @@ __This project will mainly tell you how to automate login and signup process__
 
 * 1.Run the command prompt
 > pip install auto-py-to-exe
-* 2.Type the auto-py-to-exe
+* 2.Type the auto-py-to-exe in command prompt
+> auto-py-to-exe
 
 
