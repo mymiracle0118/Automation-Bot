@@ -18,11 +18,12 @@
 __This project will mainly tell you how to automate login and signup process__
 
 ## Publish exefile
-    if you want to publish py file to exe file, you can use auto-py-to-exe.
-    It is quite easy to use for you.
-    If you want to use that, following steps are for you.
-    1.Run the command prompt
-      pip install auto-py-to-exe
-    2.Type the auto-py-to-exe
+
+> if you want to publish py file to exe file, you can use auto-py-to-exe.
+> It is quite easy to use for you.
+> If you want to use that, following steps are for you.
+> 1.Run the command prompt
+> pip install auto-py-to-exe
+> 2.Type the auto-py-to-exe
 
 
