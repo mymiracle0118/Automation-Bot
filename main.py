@@ -81,30 +81,22 @@ def signUp(firstnamestr, secondnamestr, emailaddressstr, passwordstr, selectcoun
     driver.quit()
 
 def importCSVFile():
-    with open('testfile.csv', newline='') as csvfile:
+    with open('signupinfo.csv', newline='') as csvfile:
         dataArray = list(csv.reader(csvfile))
-        print(len(dataArray))
-        print(dataArray)
+        # print(len(dataArray))
+        # print(dataArray)
     return dataArray
 
-header = ['email', 'verify_url']
-data = [
-    ['Albania', 28748, 'AL', 'ALB'],
-    ['Algeria', 2381741, 'DZ', 'DZA'],
-    ['American Samoa', 199, 'AS', 'ASM'],
-    ['Andorra', 468, 'AD', 'AND'],
-    ['Angola', 1246700, 'AO', 'AGO']
-]
+def exportCSVFile(data):
+    header = ['email', 'verify_url']
+    with open('signupverify.csv', 'w', encoding='UTF8', newline='') as f:
+        csvfile = csv.writer(f)
 
-def exportCSVFilt(data):
-    with open('countries.csv', 'w', encoding='UTF8', newline='') as f:
-    csvfile = csv.writer(f)
+        # write the header
+        csvfile.writerow(header)
 
-    # write the header
-    csvfile.writerow(header)
-
-    # write multiple rows
-    csvfile.writerows(data)
+        # write multiple rows
+        csvfile.writerows(data)
 
 def main():
     accountinfos = importCSVFile()
@@ -112,12 +104,16 @@ def main():
     for account in accountinfos:
         if(account[0] != 'No' and account[0] != ''):
             # print(account[0], account[1], account[2], account[3], account[4], account[5])
-            signUp(firstnamestr=account[1], secondnamestr=account[2], emailaddressstr=account[3], passwordstr=account[4], selectcountrystr=account[5])
-            
+            # signUp(firstnamestr=account[1], secondnamestr=account[2], emailaddressstr=account[3], passwordstr=account[4], selectcountrystr=account[5])
+            verifyaccount = []
+            verifyaccount.append(account[3])
+            verifyaccount.append('')
+            data.append(verifyaccount)
+    exportCSVFile(data)
 
 #take input from user
 print("======================================================================\n")
-print("------Welcome to Online notes Sharing made in PHP by Nitin Kumar------\n")
+print("------Welcome to My bot project------\n")
 print("======================================================================\n")
 
 main()
