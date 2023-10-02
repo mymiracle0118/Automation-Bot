@@ -1,6 +1,6 @@
 > Website used is made by me only
 > If you want to learn 'Automation using Python', you're in correct place
-> Website used - onlinenotessharing.epizy.com
+> Website used - upwork.com
 > This automated login/Sign up project covers the basic of it.
 
 :loudspeaker: Use 'PyCharm' for better experience
@@ -17,12 +17,12 @@
 
 __This project will mainly tell you how to automate login and signup process__
 
-## What can my project do ?  :clipboard:
-            * If you've account, you can Sign In
-            * If you don't have account, you can Make Account
-            * Command line for faster user input
-            * Fully automated after you give input
-            * Just a click and few inputs
-            * Fully secured website to test as it's mine only
+## Publish exefile
+    if you want to publish py file to exe file, you can use auto-py-to-exe.
+    It is quite easy to use for you.
+    If you want to use that, following steps are for you.
+    1.Run the command prompt
+      pip install auto-py-to-exe
+    2.Type the auto-py-to-exe
 
 
