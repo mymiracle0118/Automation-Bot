@@ -235,7 +235,7 @@ def verify():
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[contains(text(), 'Browse jobs')]"))).click()
 
     time.sleep(3)
-    driver.quit()
+    # driver.quit()
     
 def transform_date_format(date_string):
     # Parse the input date string
