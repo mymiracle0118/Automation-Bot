@@ -61,8 +61,8 @@ def signUp(firstnamestr, secondnamestr, emailaddressstr, passwordstr, selectcoun
     countrysearch.send_keys(selectcountrystr)
     countrysearch.send_keys(Keys.ENTER)
     # //div[@class='sort']/child::select
-    # time.sleep(3)
-    WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH,"//li[@class='up-menu-item']"))).click()
+    # time.sleep(500)
+    WebDriverWait(driver,20).until(EC.element_to_be_clickable((By.XPATH,"//li[contains(@class, 'up-menu-item')]"))).click()
 
     # WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH,"//*[contains(text(), '" + selectcountrystr + "')]"))).click()
 
@@ -88,7 +88,7 @@ def importCSVFile():
     return dataArray
 
 def exportCSVFile(data):
-    header = ['email', 'verify_url']
+    header = ['email', 'password', 'verify_url']
     with open('signupverify.csv', 'w', encoding='UTF8', newline='') as f:
         csvfile = csv.writer(f)
 
@@ -101,19 +101,25 @@ def exportCSVFile(data):
 def main():
     accountinfos = importCSVFile()
     data = []
+    index = 1
+    print("\n=========Start=========\n")
     for account in accountinfos:
         if(account[0] != 'No' and account[0] != ''):
             # print(account[0], account[1], account[2], account[3], account[4], account[5])
-            # signUp(firstnamestr=account[1], secondnamestr=account[2], emailaddressstr=account[3], passwordstr=account[4], selectcountrystr=account[5])
+            print("Account - %d \n", index)
+            signUp(firstnamestr=account[1], secondnamestr=account[2], emailaddressstr=account[3], passwordstr=account[4], selectcountrystr=account[5])
             verifyaccount = []
             verifyaccount.append(account[3])
+            verifyaccount.append(account[4])
             verifyaccount.append('')
             data.append(verifyaccount)
+    print("=========Export CSV========\n")
     exportCSVFile(data)
+    print("=========End=========\n")
 
 #take input from user
 print("======================================================================\n")
-print("------Welcome to My bot project------\n")
+print("------Welcome to My Sign Up Bot------\n")
 print("======================================================================\n")
 
 main()
