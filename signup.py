@@ -23,24 +23,30 @@ def signUp(firstnamestr, secondnamestr, emailaddressstr, passwordstr, selectcoun
     # driver.find_element_by_class_name("first_name")
     # selectItem='Agoda'
     #First click on the All reviews element to open up the dorpdown element
+    time.sleep(2)
     WebDriverWait(driver,20).until(EC.element_to_be_clickable((By.CSS_SELECTOR,"div[data-qa='work']"))).click()
     # WebDriverWait(driver,10).until(EC.element_to_be_clickable()).click()
+    time.sleep(2)
     WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//button[@data-qa='btn-apply']"))).click()
     # test = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "//text[@aria-label='First name']")))
+    time.sleep(2)
     firstname = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "first-name-input")))
     firstname.send_keys(firstnamestr)
     firstname.send_keys(Keys.ENTER)
 
+    time.sleep(2)
     secondname = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "last-name-input")))
     secondname.send_keys(secondnamestr)
     secondname.send_keys(Keys.ENTER)
 
+    time.sleep(2)
     emailaddress = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "redesigned-input-email")))
     emailaddress.send_keys(emailaddressstr)
     emailaddress.send_keys(Keys.ENTER)
     # print(passwordstr)
     # return
 
+    time.sleep(2)
     password = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "password-input")))
     password.send_keys(passwordstr)
     password.send_keys(Keys.ENTER)
@@ -52,16 +58,20 @@ def signUp(firstnamestr, secondnamestr, emailaddressstr, passwordstr, selectcoun
 
     # time.sleep(5)
     # time.sleep(20)
+    time.sleep(2)
     WebDriverWait(driver,20).until(EC.element_to_be_clickable((By.ID,"country-dropdown"))).click()
 
+    time.sleep(2)
     countrysearch = WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH,"//div[contains(@class, 'up-dropdown-menu')]/div/div/div/child::input")))
     # testdiv.click()
 
     countrysearch.click()
+    time.sleep(1)
     countrysearch.send_keys(selectcountrystr)
     countrysearch.send_keys(Keys.ENTER)
     # //div[@class='sort']/child::select
     # time.sleep(500)
+    time.sleep(2)
     WebDriverWait(driver,20).until(EC.element_to_be_clickable((By.XPATH,"//li[contains(@class, 'up-menu-item')]"))).click()
 
     # WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH,"//*[contains(text(), '" + selectcountrystr + "')]"))).click()
@@ -69,15 +79,18 @@ def signUp(firstnamestr, secondnamestr, emailaddressstr, passwordstr, selectcoun
     # time.sleep(10)
 
     # div[@class='sort']/..
+    time.sleep(2)
     checkboxlabel = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH,"//*[@id='checkbox-terms']/../../..")))
     checkboxlabel.click()
 
+    time.sleep(2)
     WebDriverWait(driver,20).until(EC.element_to_be_clickable((By.ID,"button-submit-form"))).click()
     # button = driver.find_element(By.XPATH, "//input[@type='button' and @value=' Join as a Client ']")
     # button.click()
     # radio_button = driver.find_element(By.XPATH, "//input[@type='radio' and @value='hire']")
     # driver.find_element_by_name('user').send_keys(user)
     # time.sleep(20)
+    time.sleep(3)
     driver.quit()
 
 def importCSVFile():
@@ -99,6 +112,7 @@ def exportCSVFile(data):
         csvfile.writerows(data)
 
 def main():
+    print("\n=========Import CSV=========\n")
     accountinfos = importCSVFile()
     data = []
     index = 1
