@@ -152,6 +152,8 @@ def verify():
         print("Go to photo and location setting beyond this steps!~~~")
         
     try:
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, "onetrust-accept-btn-handler"))).click()
+        
         time.sleep(3)    
         openUploadPhotoBtn = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//button[@data-qa='open-loader']")))
         openUploadPhotoBtn.click()
@@ -179,12 +181,9 @@ def verify():
         countrySearchInput.click()
         countrySearchInput.send_keys(country)
 
-        time.sleep(3)
+        time.sleep(1)
         countryToken = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//div[@class='air3-dropdown-menu-container']//ul[@data-test='menu']/li[1]")))
         countryToken.click()
-        
-        time.sleep(3)
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, "onetrust-accept-btn-handler"))).click()
         # WebDriverWait(driver, 10).until(EC.invisibility_of_element_located(By.ID, "onetrust-accept-btn-handler"))
         
         time.sleep(3)
@@ -196,8 +195,16 @@ def verify():
         cityInput = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//div[@data-qa='input-city']//input[@type='search']")))
         cityInput.send_keys(city)
         
-        time.sleep(3)
-        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,"//div[@data-test='menu-container']/ul/li[1]"))).send_keys(Keys.ENTER)
+        time.sleep(2)
+        li_elements = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,"//div[@data-test='menu-container']/ul/li[1]")))
+        # elementcount = len(li_elements)
+
+        # if elementcount == 1:
+        #     li_elements.send_keys(Keys.ENTER)
+        # else:
+        #     li_elements[1].send_keys(Keys.ENTER)
+        # li_elements.send_keys(Keys.ENTER)
+        li_elements.click()
         
         time.sleep(3)
         birthInput = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//input[@aria-labelledby='date-of-birth-label']")))
@@ -221,8 +228,12 @@ def verify():
     except TimeoutException:
         print("Go to submit step!~~~")
     
+    time.sleep(3)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[@data-qa='submit-profile-top-btn']"))).click()
-    
+
+    time.sleep(3)
+    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[contains(text(), 'Browse jobs')]"))).click()
+
     time.sleep(3)
     driver.quit()
     
