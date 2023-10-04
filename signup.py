@@ -9,10 +9,18 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
+from selenium.webdriver.chrome.options import Options
 
 #login function
 def signUp(firstnamestr, secondnamestr, emailaddressstr, passwordstr, selectcountrystr):
-    driver = webdriver.Chrome()
+    chrome_options = Options()
+    # chrome_options.add_argument("--headless=new")
+    # chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--start-maximized")  # Maximize the browser window
+    # chrome_options.add_argument("--user-data-dir=" + r'C:\Users\Administrator\AppData\Local\Google\Chrome\User Data')  # Replace with the path to your profile directory
+    # chrome_options.add_argument("--profile-directory=\\Profile 61")
+    driver = webdriver.Chrome(options=chrome_options)
+    # driver = webdriver.Chrome()
 
     driver.get('https://www.upwork.com/nx/signup/?dest=home')
 
@@ -120,13 +128,14 @@ def main():
     for account in accountinfos:
         if(account[0] != 'No' and account[0] != ''):
             # print(account[0], account[1], account[2], account[3], account[4], account[5])
-            print("Account - %d \n", index)
+            print("Account\n", index)
             signUp(firstnamestr=account[1], secondnamestr=account[2], emailaddressstr=account[3], passwordstr=account[4], selectcountrystr=account[5])
             verifyaccount = []
             verifyaccount.append(account[3])
             verifyaccount.append(account[4])
             verifyaccount.append('')
             data.append(verifyaccount)
+            index = index + 1
     print("=========Export CSV========\n")
     exportCSVFile(data)
     print("=========End=========\n")
