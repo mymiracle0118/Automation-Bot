@@ -13,14 +13,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.options import Options
 
-# chrome_options = Options()
-# # chrome_options.add_argument("--headless")
-# # chrome_options.add_argument("--no-sandbox")
-# chrome_options.add_argument("--start-maximized")  # Maximize the browser window
-# chrome_options.add_experimental_option("detach", True)
-# chrome_options.add_argument("--user-data-dir=C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data")  # Replace with the path to your profile directory
-# chrome_options.add_argument("--profile-directory=profile 63")
-# driver = webdriver.Chrome(options=chrome_options)
+chrome_options = Options()
+# chrome_options.add_argument("--headless")
+# chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--start-maximized")  # Maximize the browser window
+chrome_options.add_experimental_option("detach", True)
+chrome_options.add_argument("--user-data-dir=C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data")  # Replace with the path to your profile directory
+chrome_options.add_argument("--profile-directory=profile 63")
+driver = webdriver.Chrome(options=chrome_options)
 
 # chrome_options1 = Options()
 # # chrome_options.add_argument("--headless")
@@ -41,31 +41,31 @@ from selenium.webdriver.chrome.options import Options
 # driver2 = webdriver.Chrome(options=chrome_options2)
 
 
-profiles = ["Profile 60", "Profile 61"]
-chrome_options_list = []
+# profiles = ["Profile 60", "Profile 61"]
+# chrome_options_list = []
 
-for profile in profiles:
-    chrome_options = Options()
-    # chrome_options.add_argument("--headless=new")
-    # chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--start-maximized")  # Maximize the browser window
-    chrome_options.add_argument("--user-data-dir=C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data")  # Replace with the path to each profile directory
-    chrome_options.add_argument(f"--profile-directory={profile}")
-    chrome_options.add_experimental_option("detach", True)
-    chrome_options_list.append(chrome_options)
+# for profile in profiles:
+#     chrome_options = Options()
+#     # chrome_options.add_argument("--headless=new")
+#     # chrome_options.add_argument("--no-sandbox")
+#     chrome_options.add_argument("--start-maximized")  # Maximize the browser window
+#     chrome_options.add_argument("--user-data-dir=C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data")  # Replace with the path to each profile directory
+#     chrome_options.add_argument(f"--profile-directory={profile}")
+#     chrome_options.add_experimental_option("detach", True)
+#     chrome_options_list.append(chrome_options)
 
-browsers = []
-for chrome_options in chrome_options_list:
-    print("browser")
-    browser = webdriver.Chrome(options=chrome_options, keep_alive=True)
-    # browser.get()
-    print("get")
-    browsers.append(browser)
-    # time.sleep(5)
-    # browser.quit()
+# browsers = []
+# for chrome_options in chrome_options_list:
+#     print("browser")
+#     browser = webdriver.Chrome(options=chrome_options, keep_alive=True)
+#     # browser.get()
+#     print("get")
+#     browsers.append(browser)
+#     # time.sleep(5)
+#     # browser.quit()
 
-for i, browser in enumerate(browsers):
-    browser.get(f"http://localhost:3000")
+# for i, browser in enumerate(browsers):
+#     browser.get(f"http://localhost:3000")
     # time.sleep(5)
 # driver.get('https://www.upwork.com/nx/signup/?dest=home')
 
