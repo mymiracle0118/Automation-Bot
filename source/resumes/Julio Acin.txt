@@ -1,0 +1,82 @@
+
+Julio Acin
+
+Av Infante Don Luis, 14
+Boadilla del Monte, Madrid 28300 Spain
+Phone: 916 32 38 37
+E-Mail: noahsflood908@gmail.com
+
+Professional Summary
+
+Skilled Web and Blockchain Developer effective at incorporating user requirements to produce high-quality, clean and robust code. 
+Excellent design, development and deployment management abilities. 
+Work well with fellow developers, quality assurance team members and engineers to produce flawless applications.
+Results-oriented Software Engineer with advanced coding skills and aptitude for translating project requirements into unique and functional applications and components. 
+Successfully strategizes and executes full development lifecycle, meeting requirements and established timelines. 
+Exceptional technical analysis and troubleshooting skills.
+Knowledgeable and skilled software development professional offering advanced abilities in wide range of programming languages. 
+Quickly understands requirements for new systems and creates robust code. Familiar with testing, debugging and correcting problems found in existing software systems.
+Experienced supervisor with the ability to train and motivate staff to meet challenging performance targets and consistently satisfy customers with high-quality service. 
+Focused on keeping the department efficient and cost-effective.
+
+Skills
+
+Quality assurance
+Technical analysis
+Security implementation
+Program logic creation
+Java programming
+Manage programs
+Debug software
+Evaluate user requirements
+Gather requirements
+Supervise programmers
+Update software
+Validate code
+Verbal communication
+Analytical thinking
+
+Experience
+
+January 2022 to February 2023
+OptimizeFT San Diego, California
+Full Stack Developer    
+Developed the backend web services using Python and Django REST framework
+Strong industry experience in designing and developing scalable production quality REST API's
+Proven experience as a full stack developer utilizing multiple development languages such as .NET, Java, PHP, Ruby, Python, etc
+Employed IAM to create & control AWS users and groups access to AWS services and resources Ground-up development from scratch and maintenance using Symfony
+Hands on experience in AWS, AWS IoT concepts like Lambda, Kinesis Firehose, Redshift, AWS Java SDK programming and CLI Tools Continuous Integrations & Continuous Deployment, IAM, AWS Analytics, Green grass, Machine Learning, Step functions, IoT Core, Cognito, S3, Athena and Glue
+July 2020 to November 2021
+Boxfish Studio Aranjuez, Madrid
+Blockchain Developer    
+Smart contract development: I have participated in the development and deployment of smart contracts on the Ethereum network, using programming languages such as Solidity. I have worked on projects that involved automating business processes and creating custom tokens.
+Blockchain security: I have experience implementing strong security measures to ensure the integrity and confidentiality of data stored on a blockchain network. I have performed rigorous penetration testing and security auditing on blockchain-based systems.
+Active participation in the community: I have been an active member of groups and forums related to blockchain in Spanish, where I have shared knowledge, discussed use cases and collaborated with other professionals in the field. I have also attended blockchain-related conferences and events to stay up to date on the latest trends and advancements.
+Featured projects: During my professional career, I have had the opportunity to work on significant blockchain projects. One of them was the development of a decentralized crowdfunding platform, where we implemented the issuance and distribution of tokens through smart contracts. This project managed to successfully raise funds for various initiatives, providing transparency and traceability to donors.
+May 2018 to September 2020
+Appelink  Madrid, Madrid
+Full Stack Developer    
+Used understanding of React fundamentals to promote better component lifecycle practices, increasing turnaround speed by 23% with 100% deadline adherence.
+
+Good experience in HTML5, Angular, React, Vue, TypeScript, behavior-driven development, developer-driven test methodologies, and continuous integration & deployment.
+ Experience in frontend data visualization libraries such as D3.js and other data visualization tools like Angular, Backbone, React and Knockout JS charts, Highcharts.
+
+Liaised between marketing and IT on web development projects integrating front-end assets to back-end systems.
+March 2015 to April 2018
+Apiumhub Barcelona, Barcelona
+Front End Developer    
+Developed websites from front to backend using PHP, JavaScript, and HTML. 
+Enhanced user experience and accomplish webpage objectives by creating site structure, navigation, page optimization, and graphics integration. 
+Implemented enhancements that improved web functionality and responsiveness.
+Designed and maintained both corporate and client websites, using scripting languages and content management systems including WordPress
+
+Education
+
+April 2014 Autonomous University of Madrid Madrid, Madrid
+Bachelor of Science Computer Science 
+
+Languages
+
+Spanish - Native
+
+English - Fluent
