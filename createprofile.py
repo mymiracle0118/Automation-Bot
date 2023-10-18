@@ -12,9 +12,17 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.chrome.options import Options
 
 def verify():
-    driver = webdriver.Chrome()
+    chrome_options = Options()
+    # chrome_options.add_argument("--headless")
+    # chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--start-maximized")  # Maximize the browser window
+    chrome_options.add_experimental_option("detach", True)
+    chrome_options.add_argument("--user-data-dir=C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data")  # Replace with the path to your profile directory
+    chrome_options.add_argument("--profile-directory=profile 63")
+    driver = webdriver.Chrome(options=chrome_options)
     driver.get(verify_url)
     
     time.sleep(3)
@@ -234,7 +242,7 @@ def verify():
     time.sleep(3)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[contains(text(), 'Browse jobs')]"))).click()
 
-    time.sleep(3)
+    time.sleep(5)
     # driver.quit()
     
 def transform_date_format(date_string):
