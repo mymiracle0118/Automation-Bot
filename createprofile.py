@@ -18,7 +18,7 @@ def verify():
     chrome_options = Options()
     # chrome_options.add_argument("--headless")
     # chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--start-maximized")  # Maximize the browser window
+    # chrome_options.add_argument("--start-maximized")  # Maximize the browser window
     chrome_options.add_experimental_option("detach", True)
     # chrome_options.add_argument("--user-data-dir=C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data")  # Replace with the path to your profile directory
     # chrome_options.add_argument("--profile-directory=profile 63")

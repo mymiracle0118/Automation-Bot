@@ -16,7 +16,8 @@ def signUp(firstnamestr, secondnamestr, emailaddressstr, passwordstr, selectcoun
     chrome_options = Options()
     # chrome_options.add_argument("--headless=new")
     # chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--start-maximized")  # Maximize the browser window
+    # chrome_options.add_argument("--start-maximized")  # Maximize the browser window
+    chrome_options.add_experimental_option("detach", True)
     # chrome_options.add_argument("--user-data-dir=" + r'C:\Users\Administrator\AppData\Local\Google\Chrome\User Data')  # Replace with the path to your profile directory
     # chrome_options.add_argument("--profile-directory=\\Profile 61")
     driver = webdriver.Chrome(options=chrome_options)
@@ -99,7 +100,7 @@ def signUp(firstnamestr, secondnamestr, emailaddressstr, passwordstr, selectcoun
     # driver.find_element_by_name('user').send_keys(user)
     # time.sleep(20)
     time.sleep(3)
-    driver.quit()
+    # driver.quit()
 
 def importCSVFile():
     with open('signupinfo.csv', newline='') as csvfile:
